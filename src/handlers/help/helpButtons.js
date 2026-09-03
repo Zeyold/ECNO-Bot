@@ -124,7 +124,7 @@ export const helpPaginationButton = {
             await interaction.editReply({ embeds, components });
         } catch (error) {
             if (error?.code === 40060 || error?.code === 10062) {
-                logger.warn('L\'interaction de pagination d'aide a déjà été prise en compte ou a expiré.', {
+                logger.warn('L\'interaction de pagination d\'aide a déjà été prise en compte ou a expiré.', {
                     event: 'interaction.help.pagination.unavailable',
                     errorCode: String(error.code),
                     customId: interaction.customId,
