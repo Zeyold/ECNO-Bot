@@ -102,7 +102,7 @@ export async function createInitialHelpMenu(client) {
             },
             {
                 name: '\u200B',
-                value: `-# ${botName} est [open source](https://youtu.be/1jCZX8s3bJE?si=NPOYx-vxVE1I5vJK)`,
+                value: `-# ${botName} by Zeyold`,
                 inline: false,
             },
         ],
@@ -113,14 +113,10 @@ export async function createInitialHelpMenu(client) {
     });
     embed.setTimestamp();
 
-    const bugReportButton = new ButtonBuilder()
-        .setCustomId(BUG_REPORT_BUTTON_ID)
-        .setLabel("Signaler un bug")
-        .setStyle(ButtonStyle.Danger);
 
     const supportButton = new ButtonBuilder()
-        .setLabel("Serveur d’assistance")
-        .setURL("https://discord.gg/QnWNz2dKCE")
+        .setLabel("Serveur ECNO")
+        .setURL("https://discord.gg/WtfYPVrQs6")
         .setStyle(ButtonStyle.Link);
 
     const selectRow = createSelectMenu(
