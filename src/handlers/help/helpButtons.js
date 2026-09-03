@@ -23,7 +23,7 @@ export const helpBackButton = {
             });
         } catch (error) {
             if (error?.code === 40060 || error?.code === 10062) {
-                logger.warn('Help back button interaction already acknowledged or expired.', {
+                logger.warn('L\'interaction avec le bouton de retour a déjà été prise en compte ou a expiré.', {
                     event: 'interaction.help.button.unavailable',
                     errorCode: String(error.code),
                     customId: interaction.customId,
@@ -48,18 +48,18 @@ export const helpBugReportButton = {
         const bugRow = new ActionRowBuilder().addComponents(githubButton);
 
         const bugReportEmbed = createEmbed({
-            title: '🐛 Bug Report',
-            description: 'Found a bug? Please report it on our GitHub Issues page!\n\n' +
-                '**When reporting a bug, please include:**\n' +
-                '• 📝 Detailed description of the issue\n' +
-                '• 📋 Steps to reproduce the problem\n' +
-                '• 📸 Screenshots if applicable\n' +
-                '• 💻 Your bot version and environment\n\n' +
-                'This helps us fix issues faster and more effectively!',
+            title: '🐛 Rapport de bug',
+            description: 'Vous avez trouvé un bug ? Veuillez le signaler sur notre page GitHub Issues !\n\n' +
+                '**Lorsque vous signalez un bug, veuillez inclure :**\n' +
+                '• 📝 Description détaillée du problème\n' +
+                '• 📋 Étapes pour reproduire le problème\n' +
+                '• 📸 Captures d\'écran, le cas échéant\n' +
+                '• 💻 Version et environnement de votre bot\n\n' +
+                'Cela nous aide à résoudre les problèmes plus rapidement et plus efficacement !',
             color: 'error'
         });
         bugReportEmbed.setFooter({
-            text: 'TitanBot Bug Reporting System',
+            text: 'Zeyold Bug Reporting System',
             iconURL: client.user.displayAvatarURL()
         });
         bugReportEmbed.setTimestamp();
