@@ -9,12 +9,12 @@ import { closeTicket } from '../../services/ticket.js';
 export default {
     data: new SlashCommandBuilder()
         .setName("close")
-        .setDescription("Closes the current ticket.")
+        .setDescription("Fermer le ticket actuel.")
         .setDMPermission(false)
         .addStringOption((option) =>
             option
                 .setName("reason")
-                .setDescription("The reason for closing the ticket.")
+                .setDescription("Raison de la fermeture du ticket.")
                 .setRequired(false),
         ),
 

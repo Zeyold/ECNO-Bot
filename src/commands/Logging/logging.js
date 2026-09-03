@@ -9,22 +9,22 @@ import { replyUserError, ErrorTypes } from '../../utils/errorHandler.js';
 export default {
     data: new SlashCommandBuilder()
         .setName('logging')
-        .setDescription('Manage server logging — channels, filters, and event categories.')
+        .setDescription('Gérer la journalisation du serveur : salons, filtres et catégories d’événements.')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
         .setDMPermission(false)
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('dashboard')
-                .setDescription('Open the logging dashboard — set channels, filters, and toggle categories.'),
+                .setDescription('Ouvrir le tableau de bord des journaux : salons, filtres et catégories.'),
         )
         .addSubcommand((subcommand) =>
             subcommand
                 .setName('channel')
-                .setDescription('Quick-set a log channel without opening the dashboard.')
+                .setDescription('Configurer rapidement un salon de journaux sans ouvrir le tableau de bord.')
                 .addStringOption((option) =>
                     option
                         .setName('destination')
-                        .setDescription('Which log destination to configure.')
+                        .setDescription('Destination de journal à configurer.')
                         .setRequired(true)
                         .addChoices(
                             { name: 'Audit (moderation, messages, members…)', value: 'audit' },
@@ -35,7 +35,7 @@ export default {
                 .addChannelOption((option) =>
                     option
                         .setName('channel')
-                        .setDescription('The text channel for logs.')
+                        .setDescription('Salon textuel destiné aux journaux.')
                         .addChannelTypes(ChannelType.GuildText)
                         .setRequired(false),
                 )

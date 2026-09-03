@@ -7,7 +7,7 @@ import { InteractionHelper } from '../../utils/interactionHelper.js';
 export default {
     data: new SlashCommandBuilder()
     .setName("flip")
-    .setDescription("Flips a coin (Heads or Tails)."),
+    .setDescription("Lance une pièce (pile ou face)."),
   category: 'Fun',
 
   async execute(interaction, config, client) {

@@ -9,7 +9,7 @@ import { claimTicket } from '../../services/ticket.js';
 export default {
     data: new SlashCommandBuilder()
         .setName("claim")
-        .setDescription("Claims an open ticket, assigning it to you.")
+        .setDescription("Prendre en charge un ticket ouvert.")
         .setDMPermission(false),
 
     async execute(interaction, guildConfig, client) {

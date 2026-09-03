@@ -11,17 +11,17 @@ const SHOP_ITEMS = shopItems;
 export default {
     data: new SlashCommandBuilder()
         .setName('buy')
-        .setDescription('Buy an item from the shop')
+        .setDescription('Acheter un objet dans la boutique')
         .addStringOption(option =>
             option
                 .setName('item_id')
-                .setDescription('ID of the item to buy')
+                .setDescription('Identifiant de l’objet à acheter')
                 .setRequired(true)
         )
         .addIntegerOption(option =>
             option
                 .setName('quantity')
-                .setDescription('Quantity to buy (default: 1)')
+                .setDescription('Quantité à acheter (par défaut : 1)')
                 .setRequired(false)
                 .setMinValue(1)
                 .setMaxValue(10)

@@ -17,23 +17,23 @@ import {
 export default {
     data: new SlashCommandBuilder()
         .setName("jointocreate")
-        .setDescription("Manage Join to Create voice channels system.")
+        .setDescription("Gérer le système de salons vocaux « Rejoindre pour créer ».")
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
         .setDMPermission(false)
         .addSubcommand((subcommand) =>
             subcommand
                 .setName("setup")
-                .setDescription("Set up a new Join to Create voice channel.")
+                .setDescription("Configurer un nouveau salon vocal « Rejoindre pour créer ».")
                 .addChannelOption((option) =>
                     option
                         .setName("category")
-                        .setDescription("Category to create the channel in.")
+                        .setDescription("Catégorie dans laquelle créer le salon.")
                         .addChannelTypes(ChannelType.GuildCategory)
                 )
                 .addStringOption((option) =>
                     option
                         .setName("channel_name")
-                        .setDescription("Select a template for naming temporary voice channels.")
+                        .setDescription("Sélectionner un modèle pour nommer les salons vocaux temporaires.")
                         .addChoices(
                             { name: "{username}'s Room (Default)", value: "{username}'s Room" },
                             { name: "{username}'s Channel", value: "{username}'s Channel" },
@@ -50,7 +50,7 @@ export default {
                 .addIntegerOption((option) =>
                     option
                         .setName("user_limit")
-                        .setDescription("Maximum number of users in temporary channels. (0 = unlimited)")
+                        .setDescription("Nombre maximal d’utilisateurs dans les salons temporaires (0 = illimité).")
                 )
                 .addIntegerOption((option) =>
                     option
@@ -61,7 +61,7 @@ export default {
         .addSubcommand((subcommand) =>
             subcommand
                 .setName("dashboard")
-                .setDescription("Configure an existing Join to Create system.")
+                .setDescription("Configurer un système « Rejoindre pour créer » existant.")
                 .addChannelOption((option) =>
                     option
                         .setName("trigger_channel")

@@ -9,11 +9,11 @@ const WEATHER_URL = "https://api.open-meteo.com/v1/forecast";
 export default {
     data: new SlashCommandBuilder()
         .setName("weather")
-        .setDescription("Get real-time weather information for a location")
+        .setDescription("Obtenir la météo en temps réel d’un lieu")
         .addStringOption((option) =>
             option
                 .setName("city")
-                .setDescription("The city name, e.g., 'London' or 'Tokyo'")
+                .setDescription("Nom de la ville, par exemple « Paris » ou « Tokyo »")
                 .setRequired(true),
         ),
 
